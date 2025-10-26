@@ -4,321 +4,452 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bp Visco Marketing Execution Plan 2025</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom Tailwind Configuration - Defining brand colors */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bp-green': '#005A2B',
+                        'bp-yellow': '#FFD100',
+                        'bp-lime': '#BFFF00',
+                        'bp-cyan': '#00F5FF',
+                        'dark-text': '#1A1A1A',
+                        'light-bg': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        /* Using Inter as the primary font for a clean, modern look */
+                        sans: ['Inter', 'sans-serif'], 
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        fadeInUp: 'fadeInUp 0.6s ease-out',
+                    }
+                }
+            }
+        }
+        
+        /* Base styles for Inter font and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #1A1A1A;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Hero Wave Background Effect */
+        .hero-wave {
+            background: linear-gradient(135deg, #005A2B 0%, #00814A 100%);
+        }
+        
+        .hero-wave-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                var(--bp-lime) 0%, 
+                var(--bp-cyan) 50%, 
+                var(--bp-lime) 100%);
+            opacity: 0.15;
+            clip-path: ellipse(150% 100% at 50% 0%); /* Creates a subtle curve effect */
+            animation: waveFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes waveFloat {
+            0%, 100% {
+                transform: translateY(0) scaleX(1);
+            }
+            50% {
+                transform: translateY(-20px) scaleX(1.05);
+            }
+        }
+        
+        /* Table Hover Animation */
+        .data-table tbody tr:hover {
+            background-color: rgba(0, 90, 43, 0.03); /* Light green tint on hover */
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
     <!-- Header with Logos -->
-    <header class="header">
-        <div class="container">
-            <div class="logo-container">
-                <img src="https://ik.imagekit.io/weo7pcw8v/Screenshot%202025-10-23%20042633.png?updatedAt=1761183421059" alt="bp Logo" class="logo-bp">
-                <img src="https://ik.imagekit.io/weo7pcw8v/image-removebg-preview%20(1).png?updatedAt=1759139140244" alt="Cargas Logo" class="logo-cargas">
+    <header class="sticky top-0 z-50 bg-white shadow-lg py-4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-center gap-6 sm:gap-12 flex-wrap">
+                <!-- Logos with Image Fallbacks (in case the URLs break) -->
+                <img src="https://ik.imagekit.io/weo7pcw8v/Screenshot%202025-10-23%20042633.png?updatedAt=1761183421059" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/120x40/005A2B/FFFFFF?text=BP';" 
+                     alt="bp Logo" 
+                     class="h-10 sm:h-12 w-auto object-contain">
+                <img src="https://ik.imagekit.io/weo7pcw8v/image-removebg-preview%20(1).png?updatedAt=1759139140244" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/120x40/005A2B/FFFFFF?text=CARGAS';" 
+                     alt="Cargas Logo" 
+                     class="h-10 sm:h-12 w-auto object-contain">
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-wave"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">bp Visco Marketing Execution Plan (2025)</h1>
-            <p class="hero-subtitle">Power, Performance, Protection — bp Visco by Cargas keeps Egypt moving.</p>
-            <button class="cta-button">To be discussed</button>
+    <section class="relative py-24 sm:py-32 hero-wave text-white overflow-hidden">
+        <!-- Animated background wave -->
+        <div class="hero-wave-animation"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg leading-tight">bp Visco Marketing Execution Plan (2025)</h1>
+            <p class="text-lg sm:text-xl font-light opacity-90 max-w-3xl mx-auto mb-10">Power, Performance, Protection — bp Visco by Cargas keeps Egypt moving.</p>
+            <button class="px-10 py-4 text-lg font-bold uppercase rounded-full tracking-wider shadow-xl transition duration-300 transform bg-bp-yellow text-bp-green hover:scale-[1.03] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-bp-yellow focus:ring-opacity-50">To be discussed</button>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
+    <main class="bg-light-bg py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
             
             <!-- Section 1: Strategic Objective -->
-            <section class="content-section">
-                <h2 class="section-heading">1. 🎯 Strategic Objective</h2>
-                <div class="content-card">
-                    <p class="section-text">Position bp Visco, distributed exclusively by Cargas, as Egypt's most trusted and high-performance passenger car engine oil by combining education, visibility, engagement, and loyalty across all market tiers — trade, retail, and fleet.</p>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">1. 🎯 Strategic Objective</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
+                    <p class="text-xl leading-relaxed text-gray-700">Position bp Visco, distributed exclusively by Cargas, as Egypt's **most trusted and high-performance** passenger car engine oil by combining education, visibility, engagement, and loyalty across all market tiers — trade, retail, and fleet.</p>
                 </div>
             </section>
 
             <!-- Section 2: Strategic Pillars -->
-            <section class="content-section">
-                <h2 class="section-heading">2. 🔑 Strategic Pillars</h2>
-                <div class="content-card">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Pillar</th>
-                                    <th>Focus</th>
-                                    <th>Primary Channels</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Trade Enablement</strong></td>
-                                    <td>Empower distributors, workshops, and retailers with training, materials, and incentives</td>
-                                    <td>Field activations, POS materials, trade promotions</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Consumer Education</strong></td>
-                                    <td>Build trust through transparent product knowledge and benefits communication</td>
-                                    <td>Digital content, video series, infographics, influencer partnerships</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Digital Amplification</strong></td>
-                                    <td>Maximize reach and engagement via social media and digital advertising</td>
-                                    <td>Facebook, Instagram, TikTok, YouTube, Google Ads</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Experiential Marketing</strong></td>
-                                    <td>Create memorable brand experiences at scale</td>
-                                    <td>Roadshows, events, sponsorships, sampling campaigns</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Loyalty & Retention</strong></td>
-                                    <td>Reward repeat customers and cultivate brand advocates</td>
-                                    <td>Loyalty programs, CRM campaigns, exclusive offers</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">2. 🔑 Strategic Pillars</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 data-table">
+                        <thead class="bg-bp-green text-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-xl">Pillar</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">Focus</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tr-xl">Primary Channels</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Trade Enablement</td>
+                                <td class="px-6 py-4 text-gray-700">Empower distributors, workshops, and retailers with training, materials, and incentives</td>
+                                <td class="px-6 py-4 text-gray-700">Field activations, POS materials, trade promotions</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Consumer Education</td>
+                                <td class="px-6 py-4 text-gray-700">Build trust through transparent product knowledge and benefits communication</td>
+                                <td class="px-6 py-4 text-gray-700">Digital content, video series, infographics, influencer partnerships</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Digital Amplification</td>
+                                <td class="px-6 py-4 text-gray-700">Maximize reach and engagement via social media and digital advertising</td>
+                                <td class="px-6 py-4 text-gray-700">Facebook, Instagram, TikTok, YouTube, Google Ads</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Experiential Marketing</td>
+                                <td class="px-6 py-4 text-gray-700">Create memorable brand experiences at scale</td>
+                                <td class="px-6 py-4 text-gray-700">Roadshows, events, sponsorships, sampling campaigns</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Loyalty & Retention</td>
+                                <td class="px-6 py-4 text-gray-700">Reward repeat customers and cultivate brand advocates</td>
+                                <td class="px-6 py-4 text-gray-700">Loyalty programs, CRM campaigns, exclusive offers</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
             <!-- Image Gallery -->
-            <section class="image-gallery">
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://ik.imagekit.io/weo7pcw8v/Gemini_Generated_Image_6ldqpa6ldqpa6ldq.png?updatedAt=1759139179158" alt="bp Visco Campaign Visual 1">
+            <section class="py-16 bg-white rounded-3xl shadow-inner animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-dark-text mb-12">Campaign Visuals</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-6">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <!-- FIX 1: Changed object-cover to object-contain to prevent cropping -->
+                        <img src="https://ik.imagekit.io/weo7pcw8v/Gemini_Generated_Image_6ldqpa6ldqpa6ldq.png?updatedAt=1759139179158" onerror="this.onerror=null; this.src='https://placehold.co/400x300/005A2B/FFD100?text=Visual+1';" alt="bp Visco Campaign Visual 1" class="w-full h-48 object-contain">
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://ik.imagekit.io/weo7pcw8v/last1image%20(1).png?updatedAt=1759146004764" alt="bp Visco Campaign Visual 2">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <!-- FIX 1: Changed object-cover to object-contain to prevent cropping -->
+                        <img src="https://ik.imagekit.io/weo7pcw8v/last1image%20(1).png?updatedAt=1759146004764" onerror="this.onerror=null; this.src='https://placehold.co/400x300/005A2B/FFD100?text=Visual+2';" alt="bp Visco Campaign Visual 2" class="w-full h-48 object-contain">
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://ik.imagekit.io/weo7pcw8v/3000.png?updatedAt=1759132483621" alt="bp Visco Campaign Visual 3">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <!-- FIX 1: Changed object-cover to object-contain to prevent cropping -->
+                        <img src="https://ik.imagekit.io/weo7pcw8v/3000.png?updatedAt=1759132483621" onerror="this.onerror=null; this.src='https://placehold.co/400x300/005A2B/FFD100?text=Visual+3';" alt="bp Visco Campaign Visual 3" class="w-full h-48 object-contain">
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://ik.imagekit.io/weo7pcw8v/Gemini_Generated_Image_usvzw5usvzw5usvz.png?updatedAt=1759139178740" alt="bp Visco Campaign Visual 4">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <!-- FIX 1: Changed object-cover to object-contain to prevent cropping -->
+                        <img src="https://ik.imagekit.io/weo7pcw8v/Gemini_Generated_Image_usvzw5usvzw5usvz.png?updatedAt=1759139178740" onerror="this.onerror=null; this.src='https://placehold.co/400x300/005A2B/FFD100?text=Visual+4';" alt="bp Visco Campaign Visual 4" class="w-full h-48 object-contain">
                     </div>
                 </div>
             </section>
 
             <!-- Section 3: Yearly Marketing Calendar -->
-            <section class="content-section">
-                <h2 class="section-heading">3. 🗓️ Yearly Marketing Calendar Overview (Annual Direction & Activities)</h2>
-                <div class="content-card">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Quarter</th>
-                                    <th>Theme</th>
-                                    <th>Key Activities</th>
-                                    <th>Timeline</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Q1</strong></td>
-                                    <td>Launch & Awareness</td>
-                                    <td>National campaign kickoff, digital advertising blitz, trade training sessions, influencer partnerships</td>
-                                    <td>Jan–Mar 2025</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Q2</strong></td>
-                                    <td>Engagement & Education</td>
-                                    <td>Educational video series, roadshows in major cities, retail POS activation, social media contests</td>
-                                    <td>Apr–Jun 2025</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Q3</strong></td>
-                                    <td>Peak Performance & Experience</td>
-                                    <td>Summer driving campaigns, sponsorship of automotive events, fleet partnerships, sampling programs</td>
-                                    <td>Jul–Sep 2025</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Q4</strong></td>
-                                    <td>Loyalty & Retention</td>
-                                    <td>Launch loyalty program, year-end promotions, customer appreciation events, performance reviews</td>
-                                    <td>Oct–Dec 2025</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">3. 🗓️ Yearly Marketing Calendar Overview</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl overflow-x-auto space-y-8">
+                    <h3 class="text-2xl font-semibold text-dark-text">Annual Direction & Key Activities</h3>
+                    <table class="min-w-full divide-y divide-gray-200 data-table">
+                        <thead class="bg-bp-green text-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-xl">Quarter</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">Theme</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">Key Activities</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tr-xl">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Q1</td>
+                                <td class="px-6 py-4 text-gray-700 font-medium">Launch & Awareness</td>
+                                <td class="px-6 py-4 text-gray-700">National campaign kickoff, digital advertising blitz, trade training sessions, influencer partnerships</td>
+                                <td class="px-6 py-4 text-gray-700">Jan–Mar 2025</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Q2</td>
+                                <td class="px-6 py-4 text-gray-700 font-medium">Engagement & Education</td>
+                                <td class="px-6 py-4 text-gray-700">Educational video series, roadshows in major cities, retail POS activation, social media contests</td>
+                                <td class="px-6 py-4 text-gray-700">Apr–Jun 2025</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Q3</td>
+                                <td class="px-6 py-4 text-gray-700 font-medium">Peak Performance & Experience</td>
+                                <td class="px-6 py-4 text-gray-700">Summer driving campaigns, sponsorship of automotive events, fleet partnerships, sampling programs</td>
+                                <td class="px-6 py-4 text-gray-700">Jul–Sep 2025</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap text-lg font-semibold text-bp-green">Q4</td>
+                                <td class="px-6 py-4 text-gray-700 font-medium">Loyalty & Retention</td>
+                                <td class="px-6 py-4 text-gray-700">Launch loyalty program, year-end promotions, customer appreciation events, performance reviews</td>
+                                <td class="px-6 py-4 text-gray-700">Oct–Dec 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <div class="subsection">
-                        <h3 class="subsection-title">Year-Round and Supporting Activities</h3>
-                        <ul class="bullet-list">
-                            <li>Continuous social media presence and community management</li>
-                            <li>Ongoing POS material refresh and distribution</li>
-                            <li>Monthly trade newsletters and workshops</li>
-                            <li>Regular influencer collaborations and testimonials</li>
-                            <li>CRM campaigns targeting existing customers with tips, offers, and updates</li>
+                    <div class="pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-bp-green mb-4">Year-Round and Supporting Activities</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-gray-700">
+                                <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                                <span>Continuous social media presence and community management</span>
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                                <span>Ongoing POS material refresh and distribution</span>
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                                <span>Monthly trade newsletters and workshops</span>
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                                <span>Regular influencer collaborations and testimonials</span>
+                            </li>
+                            <li class="flex items-start text-gray-700">
+                                <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                                <span>CRM campaigns targeting existing customers with tips, offers, and updates</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <!-- Section 4: Communication Flow -->
-            <section class="content-section">
-                <h2 class="section-heading">4. 📣 Communication Flow</h2>
-                <div class="content-card">
-                    <ul class="bullet-list">
-                        <li><strong>Awareness Layer:</strong> Mass media (TV, radio, outdoor) and digital advertising (Facebook, Instagram, Google, TikTok) to introduce bp Visco and build brand recall.</li>
-                        <li><strong>Engagement Layer:</strong> Educational content (blogs, videos, infographics), influencer partnerships, and social media conversations to build trust and authority.</li>
-                        <li><strong>Trade & Loyalty Layer:</strong> Direct communication with workshops, retailers, and fleet operators through training, newsletters, and incentive programs.</li>
-                        <li><strong>Retention Layer:</strong> CRM and loyalty program communications to keep existing customers engaged and encourage repeat purchases.</li>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">4. 📣 Communication Flow</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl">
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Awareness Layer:</strong> Mass media (TV, radio, outdoor) and digital advertising (Facebook, Instagram, Google, TikTok) to introduce bp Visco and build brand recall.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Engagement Layer:</strong> Educational content (blogs, videos, infographics), influencer partnerships, and social media conversations to build trust and authority.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Trade & Loyalty Layer:</strong> Direct communication with workshops, retailers, and fleet operators through training, newsletters, and incentive programs.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Retention Layer:</strong> CRM and loyalty program communications to keep existing customers engaged and encourage repeat purchases.</span>
+                        </li>
                     </ul>
                 </div>
             </section>
 
             <!-- Section 5: Budget Summary -->
-            <section class="content-section">
-                <h2 class="section-heading">5. 💰 Budget Summary (Estimated Total ≈ 8.0–8.5 Million EGP)</h2>
-                <div class="content-card">
-                    <div class="table-responsive">
-                        <table class="data-table budget-table">
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Allocation (EGP)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Digital Advertising (Social, Search, Display)</td>
-                                    <td>2,500,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Traditional Media (TV, Radio, Outdoor)</td>
-                                    <td>1,500,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Content Creation & Influencer Partnerships</td>
-                                    <td>1,000,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Trade Marketing & POS Materials</td>
-                                    <td>1,200,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Experiential Marketing (Events, Roadshows, Sponsorships)</td>
-                                    <td>1,000,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Loyalty Program Development & Management</td>
-                                    <td>500,000</td>
-                                </tr>
-                                <tr>
-                                    <td>CRM & Database Management</td>
-                                    <td>300,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Research, Analytics & Reporting</td>
-                                    <td>300,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Contingency & Miscellaneous</td>
-                                    <td>200,000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">5. 💰 Budget Summary (Estimated Total ≈ 8.0–8.5 Million EGP)</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 data-table">
+                        <thead class="bg-bp-green text-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-xl">Category</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tr-xl">Allocation (EGP)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Digital Advertising (Social, Search, Display)</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">2,500,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Traditional Media (TV, Radio, Outdoor)</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">1,500,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Content Creation & Influencer Partnerships</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">1,000,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Trade Marketing & POS Materials</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">1,200,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Experiential Marketing (Events, Roadshows, Sponsorships)</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">1,000,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Loyalty Program Development & Management</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">500,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">CRM & Database Management</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">300,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Research, Analytics & Reporting</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">300,000</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700">Contingency & Miscellaneous</td>
+                                <td class="px-6 py-4 font-bold text-lg text-bp-green">200,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
             <!-- Section 6: KPIs -->
-            <section class="content-section">
-                <h2 class="section-heading">6. 📊 Key Performance Indicators (KPIs)</h2>
-                <div class="content-card">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>KPI</th>
-                                    <th>Target (2025)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Brand Awareness (Aided)</td>
-                                    <td>70% among target audience by Q4</td>
-                                </tr>
-                                <tr>
-                                    <td>Social Media Engagement</td>
-                                    <td>50,000 followers, 5% average engagement rate</td>
-                                </tr>
-                                <tr>
-                                    <td>Website Traffic</td>
-                                    <td>100,000 unique visitors</td>
-                                </tr>
-                                <tr>
-                                    <td>Trade Participation</td>
-                                    <td>500 workshops and retailers trained/activated</td>
-                                </tr>
-                                <tr>
-                                    <td>Loyalty Program Enrollment</td>
-                                    <td>10,000 members by Q4</td>
-                                </tr>
-                                <tr>
-                                    <td>Sales Volume Growth</td>
-                                    <td>20% increase vs. 2024</td>
-                                </tr>
-                                <tr>
-                                    <td>Customer Satisfaction (NPS)</td>
-                                    <td>NPS score of 50+</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">6. 📊 Key Performance Indicators (KPIs)</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 data-table">
+                        <thead class="bg-bp-green text-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-xl">KPI</th>
+                                <th scope="col" class="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider rounded-tr-xl">Target (2025)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Brand Awareness (Aided)</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">70% among target audience by Q4</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Social Media Engagement</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">50,000 followers, 5% average engagement rate</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Website Traffic</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">100,000 unique visitors</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Trade Participation</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">500 workshops and retailers trained/activated</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Loyalty Program Enrollment</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">10,000 members by Q4</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Sales Volume Growth</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">20% increase vs. 2024</td>
+                            </tr>
+                            <tr class="transition duration-150">
+                                <td class="px-6 py-4 text-gray-700 font-medium">Customer Satisfaction (NPS)</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">NPS score of 50+</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
             <!-- Section 7: Measurement & Reporting -->
-            <section class="content-section">
-                <h2 class="section-heading">7. 📈 Measurement & Reporting</h2>
-                <div class="content-card">
-                    <ul class="bullet-list">
-                        <li><strong>Monthly:</strong> Digital performance reports (impressions, clicks, conversions, engagement), social media analytics, trade activation summaries.</li>
-                        <li><strong>Quarterly:</strong> Brand tracking studies, sales performance analysis, campaign effectiveness reviews, budget vs. actual spend reports.</li>
-                        <li><strong>Annually:</strong> Comprehensive marketing performance review, ROI analysis, strategic recommendations for 2026.</li>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">7. 📈 Measurement & Reporting</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl">
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Monthly:</strong> Digital performance reports (impressions, clicks, conversions, engagement), social media analytics, trade activation summaries.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Quarterly:</strong> Brand tracking studies, sales performance analysis, campaign effectiveness reviews, budget vs. actual spend reports.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-yellow mr-3 text-xl leading-none">▶</span>
+                            <span><strong class="text-bp-green">Annually:</strong> Comprehensive marketing performance review, ROI analysis, strategic recommendations for 2026.</span>
+                        </li>
                     </ul>
                 </div>
             </section>
 
             <!-- Section 8: Strategic Outcome -->
-            <section class="content-section outcome-section">
-                <h2 class="section-heading">8. ✅ Strategic Outcome</h2>
-                <div class="content-card outcome-card">
-                    <ul class="bullet-list">
-                        <li>Establish bp Visco as the #1 mind-share brand for passenger car engine oils in Egypt.</li>
-                        <li>Build a loyal, educated customer base that chooses bp Visco for its proven performance and protection.</li>
-                        <li>Create a sustainable, scalable marketing framework that drives consistent growth and profitability for Cargas and bp.</li>
+            <section class="animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-bp-green mb-8 inline-block pb-3 border-b-4 border-bp-yellow">8. ✅ Strategic Outcome</h2>
+                <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl border-l-8 border-bp-yellow">
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-green mr-3 text-xl leading-none">⭐</span>
+                            <span class="font-medium">Establish bp Visco as the **\#1 mind-share brand** for passenger car engine oils in Egypt.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-green mr-3 text-xl leading-none">⭐</span>
+                            <span class="font-medium">Build a loyal, educated customer base that chooses bp Visco for its proven performance and protection.</span>
+                        </li>
+                        <li class="flex items-start text-gray-700">
+                            <span class="text-bp-green mr-3 text-xl leading-none">⭐</span>
+                            <span class="font-medium">Create a sustainable, scalable marketing framework that drives consistent growth and profitability for Cargas and bp.</span>
+                        </li>
                     </ul>
                 </div>
             </section>
 
             <!-- Final CTA -->
-            <section class="cta-section">
-                <button class="cta-button">To be discussed</button>
+            <section class="text-center py-12">
+                <button class="px-12 py-5 text-xl font-extrabold uppercase rounded-full tracking-wider shadow-2xl transition duration-300 transform bg-bp-yellow text-bp-green hover:scale-105 hover:shadow-3xl focus:outline-none focus:ring-4 focus:ring-bp-yellow focus:ring-opacity-50">To be discussed</button>
             </section>
 
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logos">
-                    <img src="https://ik.imagekit.io/weo7pcw8v/Screenshot%202025-10-23%20042633.png?updatedAt=1761183421059" alt="bp Logo" class="footer-logo">
-                    <img src="https://ik.imagekit.io/weo7pcw8v/image-removebg-preview%20(1).png?updatedAt=1759139140244" alt="Cargas Logo" class="footer-logo">
-                </div>
-                <p class="footer-text">Power, Performance, Protection — bp Visco by Cargas keeps Egypt moving.</p>
-                <p class="footer-copyright">&copy; 2025 bp Visco Marketing Execution Plan. All rights reserved.</p>
+    <footer class="bg-bp-green text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-6 sm:gap-12 mb-8 flex-wrap">
+                 <!-- Logos in Footer (White Filtered) -->
+                <!-- FIX 3: Replaced the misplaced and incomplete img tags -->
+                <img src="https://ik.imagekit.io/weo7pcw8v/Screenshot%202025-10-23%20042633.png?updatedAt=1761183421059" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/100x40/FFFFFF/005A2B?text=BP';" 
+                     alt="bp Logo" 
+                     class="h-10 w-auto object-contain filter invert opacity-90">
+                <img src="https://ik.imagekit.io/weo7pcw8v/image-removebg-preview%20(1).png?updatedAt=1759139140244" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/100x40/FFFFFF/005A2B?text=CARGAS';" 
+                     alt="Cargas Logo" 
+                     class="h-10 w-auto object-contain filter invert opacity-90">
             </div>
+            <!-- FIX 2: Text is now fully visible due to repaired logo section above -->
+            <p class="text-xl font-medium mb-4 opacity-95 max-w-2xl mx-auto">Power, Performance, Protection — bp Visco by Cargas keeps Egypt moving.</p>
+            <p class="text-sm opacity-70 mt-6">&copy; 2025 bp Visco Marketing Execution Plan. All rights reserved.</p>
         </div>
     </footer>
 
